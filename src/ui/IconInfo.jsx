@@ -1,0 +1,59 @@
+import { HiOutlineHeart } from "react-icons/hi";
+import { HiOutlineShoppingCart } from "react-icons/hi";
+import { useSelector } from "react-redux";
+import { getCart } from "../features/cart/cartSlice";
+import { getWishList } from "../features/cart/wishListSlice";
+import { Link } from "react-router-dom";
+import { Tooltip } from "@chakra-ui/react";
+import { useUser } from "../features/authentication/useUser";
+import { FaRegUser } from "react-icons/fa";
+
+function IconInfo() {
+  const { isAuthenticated } = useUser();
+  const cart = useSelector(getCart);
+
+  const wishList = useSelector(getWishList);
+
+  return (
+    <div className="flex space-x-4 items-center ">
+      <Tooltip label="wishlist" placement="bottom">
+        <Link
+          to={"/wishlist"}
+          className="relative hover:text-Secondary2 transition-colors duration-300"
+        >
+          <HiOutlineHeart className="text-2xl " />
+          {wishList.length > 0 && (
+            <span className="absolute top-[-8px] right-[-10px] w-[20px] h-[20px] flex items-center justify-center rounded-full p-1  bg-Secondary2 text-white  ">
+              {wishList.length}
+            </span>
+          )}
+        </Link>
+      </Tooltip>
+      <Tooltip label="cart" placement="bottom">
+        <Link
+          to={"/cart"}
+          className="relative  hover:text-Secondary2 transition-colors duration-300"
+        >
+          <HiOutlineShoppingCart className="text-2xl" />
+          {cart.length > 0 && (
+            <span className="absolute top-[-8px] right-[-10px] w-[20px] h-[20px] flex items-center justify-center rounded-full p-1  bg-Secondary2 text-white  ">
+              {cart.length}
+            </span>
+          )}
+        </Link>
+      </Tooltip>
+      {isAuthenticated && (
+        <Tooltip label="profile" placement="bottom">
+          <Link
+            to={"/account"}
+            className=" hover:text-Secondary2 transition-colors duration-300"
+          >
+            <FaRegUser className="text-2xl" />
+          </Link>
+        </Tooltip>
+      )}
+    </div>
+  );
+}
+
+export default IconInfo;

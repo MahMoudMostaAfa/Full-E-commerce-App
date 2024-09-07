@@ -1,0 +1,12 @@
+import CheckoutForm from "../features/checkout/CheckoutForm";
+
+function Checkout() {
+  return (
+    <div className="  min-h-full h-full ">
+      <h2 className="font-medium text-3xl mb-10">Billing Details</h2>
+      <CheckoutForm />
+    </div>
+  );
+}
+
+export default Checkout;
