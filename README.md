@@ -5,7 +5,7 @@
 
 ## 🚀 Demo
 
-[Live Demo](https://your-demo-link.com](https://eshopcommerce-react.netlify.app)) <!-- Provide link to the deployed app -->
+[Live Demo]([https://eshopcommerce-react.netlify.app]) <!-- Provide link to the deployed app -->
 
 ## 📋 Table of Contents
 
