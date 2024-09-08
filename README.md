@@ -32,7 +32,8 @@ This is a modern, responsive **E-commerce application** built with **React**. Th
 
 ## 🛠 Tech Stack
 
-- **Frontend**: React, Redux Toolkit, react query , react router , Tailwind CSS , react form
+- **Frontend**: React, Redux Toolkit, react query , react router , react form
+- **Sytling**: Tailwind CSS , Chakra UI . Material UI
 - **Backend**: Supabase as backend service
 - **Authentication**:  Supabase Auth
 - **Build Tool**: Vite
