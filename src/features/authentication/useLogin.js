@@ -23,6 +23,7 @@ export function useLogin() {
       toast.remove(toastId.current);
       navigate("/", { replace: true });
       toast.success("Logged in successfully");
+      clientQuery.invalidateQueries("user");
     },
     onError: (error) => {
       toast.remove(toastId.current);

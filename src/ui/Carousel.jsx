@@ -1,7 +1,7 @@
-import { useEffect, useState } from "react";
+import { memo, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
-function Carousel({ images }) {
+const Carousel = memo(function Carousel({ images }) {
   const [currentImage, setCurrentImage] = useState(0);
 
   useEffect(() => {
@@ -65,6 +65,6 @@ function Carousel({ images }) {
       </div>
     </div>
   );
-}
+});
 
 export default Carousel;

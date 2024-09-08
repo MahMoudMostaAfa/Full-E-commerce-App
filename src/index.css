@@ -53,6 +53,20 @@
     color: #7d8184;
     text-transform: capitalize;
   }
+  .top-effect {
+    animation: top 1s infinite ease-in-out;
+  }
+  @keyframes top {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-15px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
 }
 
 @layer components {

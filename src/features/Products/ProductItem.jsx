@@ -82,9 +82,9 @@ function ProductItem({ product }) {
           ) : (
             <button
               onClick={handleAddToWishList}
-              className=" text-center  absolute top-1 right-1 rounded-full p-[3px] bg-slate-100 hover:bg-Secondary2"
+              className=" group text-center  absolute top-1 right-1 rounded-full p-[3px] bg-slate-100 hover:bg-Secondary2  "
             >
-              <HiOutlineHeart className="text-2xl text-black" />
+              <HiOutlineHeart className="text-2xl text-black group- hover:text-white" />
             </button>
           ))}
         {!outOfStock &&

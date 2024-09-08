@@ -11,7 +11,6 @@ import { FaRegUser } from "react-icons/fa";
 function IconInfo() {
   const { isAuthenticated } = useUser();
   const cart = useSelector(getCart);
-
   const wishList = useSelector(getWishList);
 
   return (

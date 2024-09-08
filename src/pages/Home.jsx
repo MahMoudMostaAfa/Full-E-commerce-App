@@ -14,11 +14,15 @@ import { IoWatchOutline } from "react-icons/io5";
 import { CiHeadphones } from "react-icons/ci";
 import { BiJoystick } from "react-icons/bi";
 import ProductsContainer from "../ui/ProductsContainer";
-import { Link, useNavigate } from "react-router-dom";
-import NewArrival from "./NewArrival";
+import { useNavigate } from "react-router-dom";
+import NewArrival from "../ui/NewArrival";
 import { TbTruckDelivery } from "react-icons/tb";
 import { RiCustomerServiceLine } from "react-icons/ri";
 import { VscWorkspaceTrusted } from "react-icons/vsc";
+import { useEffect, useRef, useState } from "react";
+import Top from "../ui/Top";
+import { set } from "lodash";
+
 const images = [
   {
     src: "/home.jpg",
@@ -78,11 +82,58 @@ const categories = [
 function Home() {
   const navigate = useNavigate();
   const { products, isLoading } = useProducts();
+  const [isVisible, setIsVisible] = useState(false); // Track visibility
+  const sectionRef = useRef(null); // Reference to the section
+  const [toTop, setToTop] = useState(false);
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY === 0 && isVisible) {
+        setIsVisible(false); // Hide the button when scrolled to the top
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    // Cleanup the event listener when the component unmounts
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [isVisible]);
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        // Check if the section is intersecting with the viewport
+        if (entry.isIntersecting && !toTop) {
+          // console.log("visible");
+          setIsVisible(true); // Show the element
+          setToTop(false);
+        }
+      },
+      { threshold: 0.5 } // 50% of the section needs to be visible
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current); // Observe the section
+    }
+
+    // Cleanup observer on unmount
+    return () => {
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current);
+      }
+    };
+  }, [isLoading]);
+
   if (isLoading) {
     return <Spinner />;
   }
   return (
     <div>
+      <Top
+        isVisible={isVisible}
+        setIsVisible={setIsVisible}
+        setToTop={setToTop}
+      />
       <section className="flex  items-center justify-between h-[20rem] mb-20">
         <ul className="capitalize font-medium border-r  border-gray-500 space-y-2 pr-8">
           <li>woman&apos;s fasion</li>
@@ -126,7 +177,7 @@ function Home() {
           ))}
         </div>
       </section>
-      <section className="py-10 border-y">
+      <section role="products" ref={sectionRef} className="py-10 border-y">
         <Heading title="our Products" />
         <div className="flex justify-between items-center mt-5 mb-10">
           <h3 className="text-2xl font-semibold capitalize">
@@ -169,6 +220,7 @@ function Home() {
             <img
               src="/ps5.jpg"
               alt="ps"
+              loading="lazy"
               className="group-hover:blur-sm object-cover w-full hover:scale-110 transition-all  h-full grayscale"
             />
           </div>
@@ -178,6 +230,7 @@ function Home() {
               description="Featured woman collections that give you another vibe.."
             />
             <img
+              loading="lazy"
               src="/clothes.jpg"
               alt="clothes"
               className="object-cover group-hover:blur-sm w-full hover:scale-110 transition-all  h-full  "
@@ -189,6 +242,7 @@ function Home() {
               description="Amazon wireless speakers"
             />
             <img
+              loading="lazy"
               src="/speaker.jpg"
               alt="ps"
               className="group-hover:blur-sm object-cover hover:scale-110 transition-all w-full  h-full grayscale"
@@ -197,6 +251,7 @@ function Home() {
           <div className="relative group col-start-4 col-span-1 row-start-2 row-span-1 bg-slate-300 overflow-hidden">
             <NewArrival title="Perfume" description="gucci intense oud edp" />
             <img
+              loading="lazy"
               src="/perfume.jpg"
               alt="perfume"
               className="group-hover:blur-sm object-cover hover:scale-110 transition-all w-full  h-full grayscale"
