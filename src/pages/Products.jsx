@@ -5,7 +5,7 @@ import Heading from "../ui/Heading";
 function Products() {
   return (
     <>
-      <div className="flex justify-between items-center mb-14">
+      <div className="flex   justify-between items-start md:items-center mb-14">
         <Heading title="our products" />
         <ProductsOperations />
       </div>

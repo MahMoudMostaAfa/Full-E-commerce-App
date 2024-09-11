@@ -15,7 +15,7 @@ const filterOptions = [
 
 function ProductsOperations() {
   return (
-    <div className="flex items-center gap-8">
+    <div className="flex max-lg:flex-col max-md:items-end  items-center  gap-2 md:gap-4 lg:gap-8">
       <FilterBy options={filterOptions} />
       <SortBy options={sortByOptions} />
     </div>

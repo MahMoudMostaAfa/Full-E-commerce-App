@@ -12,7 +12,7 @@ function SortBy({ options }) {
     <select
       value={sortBy}
       onChange={handleSortChange}
-      className="px-5 py-2 focus:outline-none border-Secondary2 border-2 
+      className="px-2 py-1 lg:px-5 lg:py-2 focus:outline-none border-Secondary2 border-2 
    font-normal capitalize rounded-lg shadow-md  "
     >
       {options.map((option) => (

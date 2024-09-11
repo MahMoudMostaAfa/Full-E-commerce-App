@@ -8,7 +8,7 @@ import { Tooltip } from "@chakra-ui/react";
 import { useUser } from "../features/authentication/useUser";
 import { FaRegUser } from "react-icons/fa";
 
-function IconInfo() {
+function IconInfo({ setIsMenuOpen, isMenuOpen }) {
   const { isAuthenticated } = useUser();
   const cart = useSelector(getCart);
   const wishList = useSelector(getWishList);
@@ -51,6 +51,18 @@ function IconInfo() {
           </Link>
         </Tooltip>
       )}
+      <div className="w-8">
+        <button
+          onClick={() => setIsMenuOpen((pre) => !pre)}
+          className={`w-8 md:hidden  flex flex-col gap-2 ${
+            isMenuOpen ? "fixed right-2 top-5" : "relative"
+          }   z-[2000]`}
+        >
+          <span className="h-[2px] w-full bg-black rounded-full"></span>
+          <span className="h-[2px] w-full bg-black rounded-full"></span>
+          <span className="h-[2px] w-full bg-black rounded-full"></span>
+        </button>
+      </div>
     </div>
   );
 }

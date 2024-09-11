@@ -5,13 +5,13 @@ import Footer from "./Footer";
 function AppLayout() {
   return (
     <>
-      <div className="px-24">
+      <div className="px-2 md:px-24">
         <Header />
-        <main className="py-16 min-h-dvh">
+        <main className="lg:py-16 py-4 min-h-dvh">
           <Outlet />
         </main>
       </div>
-      <div className="px-24 bg-Text2">
+      <div className=" lg:px-24 px-2 bg-Text2">
         <Footer />
       </div>
     </>

@@ -27,9 +27,8 @@ function ProductItem({ product }) {
     image,
     price,
     discount,
-    description,
+
     maxQuantity,
-    category,
   } = product;
   const isInWishList = useSelector(isInWishListAction(id));
   const isInCart = useSelector(isInCartAction(id));
@@ -54,7 +53,7 @@ function ProductItem({ product }) {
   // console.log(rating, count);
   return (
     <div>
-      <div className="overflow-hidden aspect-square p-5  relative  group">
+      <div className="overflow-hidden aspect-square p-2 md:p-5  relative  group">
         {!outOfStock && (
           <div className="absolute top-1 left-2 flex flex-col space-y-2">
             {differenceInDays(new Date(), created_at) <= 7 && (
@@ -70,7 +69,11 @@ function ProductItem({ product }) {
           </div>
         )}
 
-        <img className=" object-fill h-full w-full " src={image} alt={title} />
+        <img
+          className=" object-contain h-full w-full "
+          src={image}
+          alt={title}
+        />
         {!outOfStock &&
           (isInWishList ? (
             <button

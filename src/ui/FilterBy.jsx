@@ -9,12 +9,12 @@ function FilterBy({ options }) {
   }
 
   return (
-    <div className=" space-x-1 rounded-md font-medium shadow-md ">
+    <div className=" space-x-1 rounded-md md:font-medium  shadow-md ">
       {options.map((option) => (
         <button
           key={option.value}
           onClick={() => handleFilterChange(option.value)}
-          className={`px-8 py-2  ${
+          className={`px-1 py-1 md:px-4   lg:px-8 lg:py-2  ${
             filterValue === option.value ? "bg-Secondary2 text-white" : ""
           } hover:bg-Secondary2 hover:text-white transition-all  capitalize rounded-md  `}
         >

@@ -6,7 +6,7 @@ import { searchProducts as searchProductsApi } from "../services/apiProducts";
 import Spinner from "./Spinner";
 import { debounce } from "lodash";
 
-function SearchProduct() {
+function SearchProduct({ isMenuOpen, setIsMenuOpen }) {
   const [query, setQuery] = useState("");
   const [debouncedQuery, setDebouncedQuery] = useState("");
   const [results, setResults] = useState([]);
@@ -42,14 +42,14 @@ function SearchProduct() {
   }, [debouncedQuery]);
 
   return (
-    <form className=" relative flex items-center flex-grow ">
+    <form className=" lg:order-last  relative basis-2/5 flex items-center  ">
       <input
         value={query}
         onChange={(e) => {
           setQuery(e.target.value);
         }}
         placeholder="what are you looking for ?"
-        className="  min-w-full  w-full bg-Secondary px-4 placeholder:text-sm  pr-2  py-2 "
+        className="  min-w-full  w-full bg-Secondary  px-4 placeholder:text-sm  pr-2  py-2 "
       />
       <button type="button" className=" items-center relative left-[-25px] ">
         {" "}
@@ -65,6 +65,7 @@ function SearchProduct() {
                 onClick={() => {
                   setResults([]);
                   setQuery("");
+                  isMenuOpen && setIsMenuOpen(false);
                 }}
                 to={`/products/${product.id}`}
                 className="border-b p-2 border-Primary1 gap-2 grid grid-cols-[auto_1fr] grid-rows-2"

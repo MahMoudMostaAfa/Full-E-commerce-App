@@ -3,14 +3,14 @@ import { Link } from "react-router-dom";
 
 function Footer() {
   return (
-    <footer className=" py-14 grid grid-cols-5 font-light  gap-6 capitalize text-white">
-      <div>
+    <footer className=" px-3 lg:px-0 py-14 grid grid-cols-1  lg:grid-cols-5 font-light  gap-6 capitalize text-white">
+      <div className="border-b border-white pb-5 lg:border-none lg:pb-0 space-y-2  ">
         <h4 className="font-bold mb-3">e shop</h4>
         <h5 className="mb-2">subscribe</h5>
         <p className="font-light mb-2">Get 10% off your first order</p>
         <div className="relative">
           <input
-            className=" text-gray-50 focus:outline-[1px] outline outline-[1px] p-1 outline-white bg-transparent"
+            className=" w-full text-gray-50 focus:outline-[1px] outline outline-[1px] p-1 outline-white bg-transparent"
             type="email"
             placeholder="Enter your email"
           />
@@ -19,7 +19,7 @@ function Footer() {
           </button>
         </div>
       </div>
-      <div className="space-y-2">
+      <div className="border-b border-white pb-5 lg:border-none lg:pb-0 space-y-2">
         <h4 className="mb-3 font-normal">support</h4>
         <p>
           111 Bijoy sarani, Dhaka, <br /> DH 1515, Bangladesh.
@@ -27,7 +27,7 @@ function Footer() {
         <p>eshop@gmail.com</p>
         <p>+88015-88888-9999</p>
       </div>
-      <div className="space-y-2">
+      <div className="border-b border-white pb-5 lg:border-none lg:pb-0 space-y-2">
         <h4 className="mb-3 font-normal">account</h4>
         <ul className="space-y-3">
           <li>
@@ -47,7 +47,7 @@ function Footer() {
           </li>
         </ul>
       </div>
-      <div className="space-y-2">
+      <div className="border-b border-white pb-5 lg:border-none lg:pb-0 space-y-2">
         <h4 className="mb-3 font-normal">quick link</h4>
         <ul className="space-y-3">
           <li>
@@ -67,16 +67,24 @@ function Footer() {
       <div>
         <h4 className="mb-3 font-normal">download app</h4>
         <p className="mb-2">Save $3 with App New User Only</p>
-        <div className="grid gap-1 grid-cols-2 grid-cols-2 mb-5">
+        <div className="grid gap-1 grid-cols-2   mb-5">
           <img
             className="col-span-1 row-span-2"
             src="/qrcode.png"
             alt="qr code"
           />
-          <img src="/appstore.png" alt="app store" />
-          <img src="/googleplay.png" alt="google play" />
+          <img
+            className="place-self-end md:place-self-auto"
+            src="/appstore.png"
+            alt="app store"
+          />
+          <img
+            className="place-self-end md:place-self-auto"
+            src="/googleplay.png"
+            alt="google play"
+          />
         </div>
-        <ul className="flex justify-between items-center">
+        <ul className="flex justify-end max-sm:gap-4 md:justify-between items-center">
           <li>
             <img src="Icon-Facebook.svg" />
           </li>

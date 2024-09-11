@@ -1,8 +1,7 @@
-import { se } from "date-fns/locale";
 import { FaArrowUp } from "react-icons/fa";
 
 function Top({ isVisible, setIsVisible, setToTop }) {
-  console.log(isVisible);
+  // console.log(isVisible);
   return (
     <button
       onClick={() => {

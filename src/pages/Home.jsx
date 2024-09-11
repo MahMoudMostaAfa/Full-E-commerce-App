@@ -1,3 +1,4 @@
+import { useEffect, useRef, useState } from "react";
 import { useProducts } from "../features/Products/useProducts";
 import ProductItem from "../features/Products/ProductItem";
 import { FaLongArrowAltLeft, FaLongArrowAltRight } from "react-icons/fa";
@@ -16,12 +17,8 @@ import { BiJoystick } from "react-icons/bi";
 import ProductsContainer from "../ui/ProductsContainer";
 import { useNavigate } from "react-router-dom";
 import NewArrival from "../ui/NewArrival";
-import { TbTruckDelivery } from "react-icons/tb";
-import { RiCustomerServiceLine } from "react-icons/ri";
-import { VscWorkspaceTrusted } from "react-icons/vsc";
-import { useEffect, useRef, useState } from "react";
 import Top from "../ui/Top";
-import { set } from "lodash";
+import Benefits from "../ui/Benefits";
 
 const images = [
   {
@@ -134,8 +131,8 @@ function Home() {
         setIsVisible={setIsVisible}
         setToTop={setToTop}
       />
-      <section className="flex  items-center justify-between h-[20rem] mb-20">
-        <ul className="capitalize font-medium border-r  border-gray-500 space-y-2 pr-8">
+      <section className="flex   items-center justify-between h-[20rem] lg:mb-20">
+        <ul className="max-sm:hidden capitalize font-medium border-r  border-gray-500 space-y-2 pr-8">
           <li>woman&apos;s fasion</li>
           <li>men&apos;s fasion</li>
           <li>electronics</li>
@@ -148,7 +145,7 @@ function Home() {
         </ul>
         <Carousel images={images} />
       </section>
-      <section className="py-10 border-y">
+      <section className=" py-10 border-y">
         <Heading title="Categories" />
         <div className="flex justify-between items-center mt-5  mb-10">
           <h3 className="text-2xl font-semibold capitalize">
@@ -163,7 +160,7 @@ function Home() {
             </button>
           </div>
         </div>
-        <div className="flex items-start justify-between mt-6 ">
+        <div className="flex items-start gap-y-4 flex-wrap justify-between mt-6 ">
           {categories.map((category, index) => (
             <div
               key={index}
@@ -210,8 +207,8 @@ function Home() {
         <div className="flex justify-between items-center mt-5  mb-10">
           <h3 className="text-2xl font-semibold capitalize">new arrivals</h3>
         </div>
-        <div className="h-[35rem] grid grid-cols-4 grid-rows-2 gap-6 ">
-          <div className=" group relative col-start-1 col-span-2 row-span-2 overflow-hidden">
+        <div className=" h-[50rem] md:h-[35rem] grid grid-cols-4 grid-rows-4 md:grid-rows-2  gap-2 md:gap-6 ">
+          <div className=" group relative col-start-1 col-span-full md:col-span-2 row-start-1 row-span-2 overflow-hidden">
             <NewArrival
               title="playstation 5"
               description="Black and White version of the PS5 coming out on sale."
@@ -224,7 +221,7 @@ function Home() {
               className="group-hover:blur-sm object-cover w-full hover:scale-110 transition-all  h-full grayscale"
             />
           </div>
-          <div className="relative group col-start-3 col-span-2 row-span-1 bg-slate-300 overflow-hidden">
+          <div className="relative group col-start-1 col-span-full md:col-start-3 md:col-span-2 row-start-3  row-span-1 md:row-span-1 bg-slate-300 overflow-hidden">
             <NewArrival
               title="Women’s Collections"
               description="Featured woman collections that give you another vibe.."
@@ -236,7 +233,7 @@ function Home() {
               className="object-cover group-hover:blur-sm w-full hover:scale-110 transition-all  h-full  "
             />
           </div>
-          <div className="relative group col-start-3 col-span-1 row-start-2 row-span-1 bg-slate-300 overflow-hidden">
+          <div className="relative group col-start-1 md:col-start-3 col-span-2 md:col-span-1 row-start-4 md:row-start-2 row-span-1 bg-slate-300 overflow-hidden">
             <NewArrival
               title="Speakers"
               description="Amazon wireless speakers"
@@ -248,7 +245,7 @@ function Home() {
               className="group-hover:blur-sm object-cover hover:scale-110 transition-all w-full  h-full grayscale"
             />
           </div>
-          <div className="relative group col-start-4 col-span-1 row-start-2 row-span-1 bg-slate-300 overflow-hidden">
+          <div className="relative group col-start-3 md:col-start-4 col-span-2 md:col-span-1 row-start-4 md:row-start-2 row-span-1 bg-slate-300 overflow-hidden">
             <NewArrival title="Perfume" description="gucci intense oud edp" />
             <img
               loading="lazy"
@@ -259,35 +256,7 @@ function Home() {
           </div>
         </div>
       </section>
-      <section className="grid grid-cols-3 gap-14 ">
-        <div className="cursor-pointer  group text-center py-10 px-5">
-          <span className=" outline transition outline-Text1 outline-[8px] m-auto flex justify-center items-center text-3xl text-white bg-black w-12 h-12 p-1  rounded-full mb-5">
-            <TbTruckDelivery />
-          </span>
-          <h4 className="text-xl font-bold mb-2 uppercase">
-            FREE AND FAST DELIVERY
-          </h4>
-          <p className="font-normal">Sallers active our site</p>
-        </div>
-        <div className="cursor-pointer group text-center py-10 px-5">
-          <span className=" outline transition outline-Text1 outline-[8px] m-auto flex justify-center items-center text-3xl text-white bg-black w-12 h-12 p-1  rounded-full mb-5">
-            <RiCustomerServiceLine />
-          </span>
-          <h4 className="text-xl font-bold mb-2 uppercase">
-            24/7 CUSTOMER SERVICE
-          </h4>
-          <p className="font-normal">Mopnthly Produduct Sale</p>
-        </div>
-        <div className="cursor-pointer group text-center py-10 px-5">
-          <span className=" outline transition outline-Text1 outline-[8px] m-auto flex justify-center items-center text-3xl text-white bg-black w-12 h-12 p-1  rounded-full mb-5">
-            <VscWorkspaceTrusted />
-          </span>
-          <h4 className="text-xl font-bold mb-2 uppercase">
-            MONEY BACK GUARANTEE
-          </h4>
-          <p className="font-normal">We reurn money within 30 days</p>
-        </div>
-      </section>
+      <Benefits />
     </div>
   );
 }

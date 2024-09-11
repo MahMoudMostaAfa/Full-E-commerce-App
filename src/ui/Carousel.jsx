@@ -17,9 +17,9 @@ const Carousel = memo(function Carousel({ images }) {
   return (
     <div
       role="carousel"
-      className="bg-slate-400 w-[80%] shadow-md  h-[20rem] relative overflow-hidden"
+      className="bg-slate-400 max-md:w-full w-[80%] shadow-md  h-[20rem] relative overflow-hidden"
     >
-      <div className="absolute capitalize flex justify-center flex-col z-50 top-0 left-0 text-white font-bold h-full w-[30%] gap-4 text-center  text-3xl">
+      <div className="absolute capitalize flex justify-center flex-col z-50 top-0 left-3 lg:left-0  text-white font-bold h-full w-[50%] lg:w-[30%] gap-4 text-center  text-3xl">
         <h3>Up to 10% off Voucher</h3>
         <Link
           to="/products"
