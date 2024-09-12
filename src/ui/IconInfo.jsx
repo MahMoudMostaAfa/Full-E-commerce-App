@@ -53,14 +53,30 @@ function IconInfo({ setIsMenuOpen, isMenuOpen }) {
       )}
       <div className="w-8">
         <button
-          onClick={() => setIsMenuOpen((pre) => !pre)}
+          onClick={(e) => {
+            e.stopPropagation();
+            // console.log("clicked");
+            setIsMenuOpen((pre) => !pre);
+          }}
           className={`w-8 md:hidden  flex flex-col gap-2 ${
             isMenuOpen ? "fixed right-2 top-5" : "relative"
           }   z-[2000]`}
         >
-          <span className="h-[2px] w-full bg-black rounded-full"></span>
-          <span className="h-[2px] w-full bg-black rounded-full"></span>
-          <span className="h-[2px] w-full bg-black rounded-full"></span>
+          <span
+            className={`${
+              isMenuOpen && "  rotate-45  translate-x-1  translate-y-[8px] "
+            } transition-transform h-[2px] w-full bg-black rounded-full`}
+          ></span>
+          <span
+            className={`${
+              isMenuOpen ? "opacity-0" : "opacity-100"
+            } h-[2px] w-full bg-black rounded-full`}
+          ></span>
+          <span
+            className={`${
+              isMenuOpen && "-rotate-45 translate-x-[3px]  -translate-y-[12px]"
+            } transition-transform h-[2px] w-full bg-black rounded-full`}
+          ></span>
         </button>
       </div>
     </div>
