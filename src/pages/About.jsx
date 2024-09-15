@@ -9,7 +9,7 @@ function About() {
   return (
     <div>
       <section className="min-h-[20rem] w-full flex items-center  mb-40">
-        <div className="basis-1/2">
+        <div className="basis-1/2 max-[600px]:flex-grow">
           <h2 className="text-5xl capitalize text-black  mb-5 font-semibold">
             our story
           </h2>
@@ -27,11 +27,11 @@ function About() {
             </span>
           </p>
         </div>
-        <div className="basis-1/2 relative left-[6rem]  flex items-center ">
+        <div className="max-[600px]:hidden basis-1/2 relative left-[6rem]  flex items-center ">
           <img src="/about-bg.jpg" className="object-cover" />
         </div>
       </section>
-      <section className="grid grid-cols-4 gap-10 mb-40">
+      <section className="grid grid-cols-1 max-md:px-20  md:grid-cols-2 lg:grid-cols-4 gap-10 mb-40">
         <div className="cursor-pointer  group text-center transition-colors duration-200 hover:border-none hover:bg-Secondary2 hover:text-white  border border-Text1 rounded-sm py-10 px-5">
           <span className=" outline transition group-hover:outline-[rgba(255,255,255,0.24)] outline-Text1 outline-[8px] m-auto flex justify-center items-center text-3xl text-white group-hover:text-black group-hover:bg-white bg-black w-12 h-12 p-1  rounded-full mb-5">
             <IoStorefrontOutline />
@@ -61,7 +61,7 @@ function About() {
           <p className="font-normal">Anual gross sale in our site</p>
         </div>
       </section>
-      <section className="grid grid-cols-3 gap-14 mb-40">
+      <section className="grid max-sm:grid-cols-1  grid-cols-2  lg:grid-cols-3 gap-14 mb-40">
         <div>
           <div className="  text-center bg-Text1  overflow-hidden  w-full h-[25rem] relative ">
             <img

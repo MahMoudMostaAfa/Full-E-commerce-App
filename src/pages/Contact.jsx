@@ -5,7 +5,7 @@ import ContactForm from "../ui/ContactForm";
 function Contact() {
   return (
     <div className="grid grid-cols-5  gap-4 min-h-[10rem]">
-      <div className="col-span-2 p-8 space-y-5 shadow-md">
+      <div className="col-span-full  lg:col-span-2 p-8 space-y-5 shadow-md">
         <figure className="space-y-4 font-medium pb-8 border-b border-gray-300">
           <div className="flex gap-4 items-center">
             <div className="bg-Secondary2 w-12 h-12 p-2  rounded-full text-white flex items-center justify-center ">
@@ -32,7 +32,7 @@ function Contact() {
           <p>Emails: support@exclusive.com</p>
         </figure>
       </div>
-      <div className="col-span-3 p-8  shadow-md ">
+      <div className=" col-span-full  lg:col-span-3 p-8  shadow-md ">
         <ContactForm />
       </div>
     </div>

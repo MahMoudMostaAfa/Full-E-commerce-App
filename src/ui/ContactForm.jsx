@@ -25,12 +25,12 @@ function ContactForm() {
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
-      className="  grid gap-5 grid-cols-3 grid-rows-[auto_1fr_auto] h-full"
+      className="  grid gap-5 grid-cols-1  lg:grid-cols-3 lg:grid-rows-[auto_1fr_auto] h-full"
     >
       <input
         type="text"
         placeholder="your name*"
-        className="  capitalize rounded-sm focus:outline-none p-2 bg-Secondary col-span-1 row-span-1 "
+        className="  capitalize rounded-sm focus:outline-none p-2 bg-Secondary col-span-full row-start-1   lg:col-span-1 row-span-1 "
         name="name"
         {...register("name", {
           required: "this field is required",
@@ -39,7 +39,7 @@ function ContactForm() {
       <input
         type="email"
         placeholder="your email*"
-        className="capitalize rounded-sm focus:outline-none p-2 bg-Secondary col-span-1 row-span-1"
+        className="capitalize rounded-sm focus:outline-none p-2 bg-Secondary col-span-full lg:col-span-1  row-start-2 lg:row-start-1 row-span-1"
         name="email"
         {...register("email", {
           required: "this field is required",
@@ -52,7 +52,7 @@ function ContactForm() {
       <input
         type="text"
         placeholder="your phone*"
-        className="capitalize rounded-sm focus:outline-none p-2 bg-Secondary col-span-1 row-span-1"
+        className="capitalize rounded-sm focus:outline-none p-2 bg-Secondary lg:col-span-1  row-start-3 lg:row-start-1 row-span-1"
         name="name"
         {...register("phone", {
           required: "this field is required",
@@ -60,7 +60,7 @@ function ContactForm() {
       />
       <textarea
         placeholder="your message*"
-        className="focus:outline-none p-2 bg-Secondary row-start-2 row-span-1  col-span-full "
+        className="focus:outline-none p-2 bg-Secondary row-start-4 lg:row-start-2 row-span-1  col-span-full "
         name="message"
         {...register("message", {
           required: "this field is required",
@@ -71,7 +71,7 @@ function ContactForm() {
         })}
       />
       <div
-        className="col-start-3 col-span-1 row-start-3 row-span-1 
+        className="  lg:col-start-3 col-span-1  row-start-5 lg:row-start-3 row-span-1 
        min-h-10  relative text-right"
       >
         {isLoading ? <MiniSpinner /> : <Button title="send message" />}

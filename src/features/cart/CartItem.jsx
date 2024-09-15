@@ -11,11 +11,10 @@ import { changeQuantityById, removeFromCart } from "./cartSlice";
 import { Link } from "react-router-dom";
 
 function CartItem({ cartItem }) {
-  const { id, title, price, discount, image, quantity, maxQuantity, category } =
-    cartItem;
+  const { id, title, price, discount, image, quantity, maxQuantity } = cartItem;
   const dispatch = useDispatch();
   return (
-    <li className="grid grid-cols-4 font-normal capitalize shadow-sm shadow-gray-200 text-center h-[5rem]  place-items-center  ">
+    <li className=" max-md:text-sm grid grid-cols-4 font-normal capitalize shadow-sm shadow-gray-200 text-center h-[5rem]  place-items-center  ">
       <div className="flex items-center gap-4 relative">
         <button
           onClick={() => dispatch(removeFromCart(id))}
@@ -23,7 +22,10 @@ function CartItem({ cartItem }) {
         >
           &times;
         </button>
-        <img className="  h-12 max-w-full max-h-full" src={image} />
+        <img
+          className=" max-md:hidden h-12 max-w-full max-h-full"
+          src={image}
+        />
         <Link
           to={`/products/${id}`}
           className="flex-grow hover:underline hover:cursor-pointer"

@@ -12,11 +12,11 @@ function CartList() {
     return <Empty title="cart" goTo="/products" />;
   }
   return (
-    <div className="px-10">
+    <div className="max-md:px-0 px-10">
       <div role="table">
         <div
           role="table header"
-          className="grid grid-cols-4 font-medium capitalize shadow-md shadow-gray-200 text-center h-[5rem] place-items-center mb-6"
+          className="grid grid-cols-4 font-medium capitalize shadow-md shadow-gray-200 text-center h-[4rem] text-normal md:h-[5rem] place-items-center mb-6"
         >
           <div>Product</div>
           <div>Price</div>

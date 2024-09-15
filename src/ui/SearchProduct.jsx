@@ -42,7 +42,7 @@ function SearchProduct({ isMenuOpen, setIsMenuOpen }) {
   }, [debouncedQuery]);
 
   return (
-    <form className=" lg:order-last  relative basis-2/5 flex items-center  ">
+    <form className=" md:order-last  relative basis-2/5 flex items-center  ">
       <input
         value={query}
         onChange={(e) => {

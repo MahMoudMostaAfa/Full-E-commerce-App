@@ -3,7 +3,7 @@ import Button from "../../ui/Button";
 function CouponForm() {
   return (
     <div
-      className=" basis-[50%] self-start flex gap-4"
+      className=" md:basis-[50%] md:self-start flex gap-4"
       // onSubmit={(e) => e.preventDefault()}
     >
       <input

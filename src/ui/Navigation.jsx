@@ -2,7 +2,7 @@ import { NavLink } from "react-router-dom";
 
 function Navigation({ setIsMenuOpen, isMenuOpen }) {
   return (
-    <ul className=" flex flex-col lg:flex-row gap-y-8 lg:gap-y-0 lg:space-x-8 items-center  justify-between">
+    <ul className=" flex flex-col md:flex-row gap-y-8 lg:gap-y-0 md:space-x-2 lg:space-x-8 items-center  justify-between">
       <li>
         <NavLink
           to="/"

@@ -51,7 +51,7 @@ function IconInfo({ setIsMenuOpen, isMenuOpen }) {
           </Link>
         </Tooltip>
       )}
-      <div className="w-8">
+      <div className="md:hidden w-8">
         <button
           onClick={(e) => {
             e.stopPropagation();

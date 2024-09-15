@@ -22,7 +22,7 @@ function SignupForm() {
     );
   }
   return (
-    <div className="py-8  px-16 basis-[40%] ">
+    <div className="py-8 w-full px-3  lg:px-16   lg:basis-[40%]  ">
       <h2 className=" capitalize font-semibold text-3xl mb-2">
         {" "}
         create an account
