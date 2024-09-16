@@ -11,7 +11,6 @@ import {
   decreasingQuantity,
   getCurrentQuantityById,
   increasingQuantity,
-  isInCart as isInCartAction,
 } from "../cart/cartSlice";
 import {
   isInWishList as isInWishListAction,
@@ -36,13 +35,10 @@ function ProductDetails() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const { product, isLoading } = useProductDetails(productId);
-  const isInCart = useSelector(isInCartAction(+productId));
   const isInWishList = useSelector(isInWishListAction(+productId));
   const currentQuantity = useSelector(getCurrentQuantityById(+productId));
   if (isLoading) return <Spinner />;
 
-  // console.log(currentQuantity);
-  // console.log(product.maxQuantity);
   function handleIncrement() {
     // console.log(currentQuantity);
     if (currentQuantity === product.maxQuantity) return;
@@ -58,15 +54,18 @@ function ProductDetails() {
   }
 
   return (
-    <div className="  h-[35rem] grid grid-cols-5 grid-rows-5 gap-6 ">
-      <div className=" overflow-hidden  col-span-3  row-span-full  ">
+    <div className="  lg:h-[35rem] grid max-lg:grid-cols-1 max-lg:grid-rows-[auto_auto_auto] grid-cols-5 grid-rows-[auto_auto] content-center  lg:gap-6 ">
+      <div
+        className=" overflow-hidden grid max-lg:col-span-1 max-lg:row-span-1  
+      max-lg:row-start-1 col-span-3   row-span-full  "
+      >
         <img
-          className=" transition  duration-300	 hover:rotate-12 object-contain hover:scale-[1.1] w-full h-full max-w-full max-h-full"
+          className=" transition  duration-300	 hover:rotate-12 object-contain hover:scale-[1.1] max-md:w-[70%] max-md:mx-auto w-full h-full max-w-full max-h-full"
           src={product.image}
           alt={product.title}
         />
       </div>
-      <div className=" col-span-2  row-span-2  border-b-[1px]  border-b-gray-200">
+      <div className=" col-start-4 max-lg:col-span-1 max-lg:row-start-2  col-span-2 row-start-1  row-span-1   border-b-[1px] pb-2  border-b-gray-200">
         <h1 className="font-semibold text-2xl capitalize mb-2">
           {product.title}
         </h1>
@@ -111,9 +110,9 @@ function ProductDetails() {
             )}
           </div>
         )}
-        <p className="text-sm ">{product.description.slice(0, 120)}</p>
+        <p className="text-sm ">{product.description}</p>
       </div>
-      <div className="  col-span-2 row-span-3  ">
+      <div className=" max-lg:col-span-1 max-lg:row-start-3 col-start-4 row-start-2 col-span-2  ">
         {product.maxQuantity > 0 && (
           <div className="flex justify-between  my-2 gap-5 mb-16 ">
             <div className=" w-[30%] flex border border-gray-300 items-center overflow-hidden rounded-md justify-between">

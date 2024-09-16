@@ -44,11 +44,11 @@ function CheckoutForm() {
     <form
       noValidate
       onSubmit={handleSubmit(onSubmit)}
-      className=" min-h-full grid gap-x-20 grid-cols-5 grid-rows-2 "
+      className="  min-h-full grid  max-md:grid-cols-1 max-md:grid-rows-[auto_auto_auto]   lg:gap-x-20 max-md:gap-y-4  grid-cols-5 grid-rows-2 "
     >
       <BillingDetails register={register} errors={errors} />
       <CheckoutPreview />
-      <div className=" col-span-3 ">
+      <div className=" max-md:col-span-full max-md:row-start-3 max-md:row-span-1     col-span-3 ">
         <div className="w-[70%] mx-auto flex gap-3 items-center justify-between">
           <input
             className="accent-black w-5 h-5 "
@@ -86,9 +86,11 @@ function CheckoutForm() {
             <span className="font-medium">cash</span>
           </label>
         </div>
-        <div className="w-[88%] ml-auto py-5 space-y-5">
+        <div className="max-md:mx-auto w-[88%] ml-auto py-5 space-y-5">
           <CouponForm />
-          <Button title={isLoading ? " ordering..." : "place order"} />
+          <div className="max-md:text-center">
+            <Button title={isLoading ? " ordering..." : "place order"} />
+          </div>
         </div>
       </div>
     </form>

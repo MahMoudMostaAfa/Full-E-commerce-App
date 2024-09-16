@@ -1,7 +1,7 @@
 const emailRegex = /^[\w.%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
-function BillingDetails({ register, errors  }) {
+function BillingDetails({ register, errors }) {
   return (
-    <div className=" col-span-2 row-span-2 space-y-4">
+    <div className=" max-md:col-span-full   sm:max-md:pr-24 max-md:row-start-1 max-md:row-span-1  col-span-2 row-span-2 space-y-4">
       <div className="flex flex-col gap-2 ">
         <label
           className="capitalize font-normal text-Text1"

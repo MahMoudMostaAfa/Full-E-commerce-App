@@ -98,7 +98,7 @@ function Profile() {
             first Name
           </label>
           <input
-            className=" focus:outline-none bg-Secondary p-2 text-Text1 w-[70%]"
+            className=" focus:outline-none bg-Secondary p-2 text-Text1 max-md:w-full w-[70%]"
             id="firstName"
             name="firstName"
             type="text"
@@ -110,7 +110,7 @@ function Profile() {
             last Name
           </label>
           <input
-            className=" focus:outline-none bg-Secondary p-2 text-Text1 w-[70%]"
+            className=" focus:outline-none bg-Secondary p-2 text-Text1 max-md:w-full w-[70%]"
             id="lastName"
             name="lastName"
             type="text"
@@ -123,7 +123,7 @@ function Profile() {
           </label>
           <input
             disabled
-            className=" disabled:cursor-not-allowed focus:outline-none bg-Secondary p-2 text-Text1 w-[70%]"
+            className=" disabled:cursor-not-allowed focus:outline-none bg-Secondary p-2 text-Text1 max-md:w-full w-[70%]"
             id="email"
             name="email"
             type="text"
@@ -135,7 +135,7 @@ function Profile() {
             address
           </label>
           <input
-            className=" focus:outline-none bg-Secondary p-2 text-Text1 w-[70%]"
+            className=" focus:outline-none bg-Secondary p-2 text-Text1 max-md:w-full w-[70%]"
             id="address"
             name="address"
             type="text"
@@ -193,7 +193,7 @@ function Profile() {
             </span>
           )}
         </div>
-        <div className="col-start-2 col-span-1 flex items-center gap-10 mt-4">
+        <div className=" max-md:col-start-1 max-md:col-span-2 max-md:justify-end col-start-2 col-span-1 flex items-center gap-10 mt-4">
           <button type="button" onClick={resetForm}>
             cancal
           </button>

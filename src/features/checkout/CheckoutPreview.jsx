@@ -11,8 +11,8 @@ function CheckoutPreview({ order }) {
   }
 
   return (
-    <div className="col-start-3 col-span-3">
-      <div className="w-[70%] mx-auto font-medium ">
+    <div className="max-md:col-span-full max-md:row-start-2 max-md:row-span-1  col-start-3 col-span-3">
+      <div className="max-md:w-[90%]  w-[70%] mx-auto font-medium ">
         <ul className="space-y-3 mb-4">
           {cart.map((item) => (
             <li className="flex  items-center  gap-3" key={item.id}>

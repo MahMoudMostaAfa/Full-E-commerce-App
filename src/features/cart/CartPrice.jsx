@@ -10,7 +10,7 @@ function CartPrice() {
   return (
     <div className="flex max-md:flex-col max-md:justify-center max-md:items-center items-start gap-4 justify-between">
       <CouponForm />
-      <div className="border  p-4 w-[80%] md:w-[40%]  border-black rounded-sm">
+      <div className="border  p-4   w-full md:w-[40%]  border-black rounded-sm">
         <h4 className="font-semibold capitalize mb-2 ">cart total:</h4>
         <div className=" mb-3 pb-3 flex justify-between font-medium  border-b border-black   ">
           {" "}
