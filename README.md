@@ -24,7 +24,7 @@ This is a modern, responsive **E-commerce application** built with **React**. Th
 - 🛒 **Shopping Cart and wishlist**: Add, remove, and modify items in the cart.
 - 🔐 **Authentication**: User login, registration, and secure access to orders.
 - 👨🏻‍💻 **Profile Management**: update name address and password
-- ✅ **Validation**: using react form and patterns
+- ✅ **Data Validation**: using react form and patterns
 - 🌐 **Responsive Design**: Fully optimized for mobile and desktop.
 - ↗️ **Optimization**: optimaztion using react query and lodash for repeated API calls and react lazy loading to minimize size of bundle
 - 🔁 **State Management**: Efficient global state handling with Redux Toolkit and React query.
