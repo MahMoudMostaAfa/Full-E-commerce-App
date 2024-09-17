@@ -11,11 +11,11 @@ function AccountNav() {
   return (
     <div
       className={` ${
-        isOpen ? "left-0" : "left-[-15rem]"
+        isOpen ? "left-0 " : "left-[-15rem]"
       }  top-0 max-md:w-[15rem] transition-all duration-300 max-md:absolute z-40 max-md:p-4 max-md:rounded-md  max-md:bg-white max-md:border-r max-md:h-full col-span-1 flex flex-col `}
     >
       <button
-        className={` md:hidden top-0 left-[100%] rounded-r-lg bg-Secondary2 shadow-xl shadow-red-100 py-4 absolute text-white font-semibold `}
+        className={` md:hidden top-0 left-[100%] rounded-r-lg bg-Secondary2 py-4 absolute text-white text-lg font-bold `}
         onClick={() => setIsOpen(!isOpen)}
       >
         {isOpen ? <IoIosArrowBack /> : <IoIosArrowForward />}

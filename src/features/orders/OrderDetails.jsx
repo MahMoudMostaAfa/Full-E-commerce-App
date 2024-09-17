@@ -16,7 +16,7 @@ function OrderDetails() {
   if (isLoading) return <Spinner />;
   return (
     <div>
-      <div className="flex  items-center gap-6 mb-10 ">
+      <div className="flex  items-center gap-6 mb-10  ">
         <h2 className="font-medium text-3xl capitalize">
           Order Details #{order.id}{" "}
         </h2>
@@ -28,7 +28,7 @@ function OrderDetails() {
           {order.status}
         </span>
       </div>
-      <div className="grid grid-cols-5 gap-10">
+      <div className="grid  grid-cols-1 md:grid-cols-5 gap-10">
         <OrderBillingDetails order={order} />
         <CheckoutPreview order={order} />
       </div>

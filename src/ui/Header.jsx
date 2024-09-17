@@ -49,7 +49,7 @@ function Header() {
         ref={menuRef}
         className={`${
           isMenuOpen ? " right-0  " : "right-[-100%]"
-        }  px-4 lg:px-0  transition-all duration-300  md:pt-0 max-md:fixed z-[1000] top-0 max-md:h-screen flex justify-start md:justify-between flex-col md:flex-row bg-white lg:bg-transparent  lg:flex-row lg:flex-grow lg:flex lg:justify-around`}
+        }  px-4 lg:px-0  transition-all duration-300  md:pt-0 max-md:fixed z-[1000] top-0 max-md:pt-16 max-md:space-y-6 max-md:h-screen flex justify-start md:justify-between flex-col md:flex-row bg-white lg:bg-transparent  lg:flex-row lg:flex-grow lg:flex lg:justify-around`}
       >
         <SearchProduct isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
         <Navigation isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
