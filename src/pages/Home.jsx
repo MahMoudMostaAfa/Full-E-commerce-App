@@ -15,7 +15,7 @@ import { IoWatchOutline } from "react-icons/io5";
 import { CiHeadphones } from "react-icons/ci";
 import { BiJoystick } from "react-icons/bi";
 import ProductsContainer from "../ui/ProductsContainer";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import NewArrival from "../ui/NewArrival";
 import Top from "../ui/Top";
 import Benefits from "../ui/Benefits";
@@ -133,15 +133,41 @@ function Home() {
       />
       <section className="flex   items-center justify-between h-[20rem] lg:mb-20">
         <ul className="max-sm:hidden capitalize font-medium border-r  border-gray-500 space-y-2 pr-8">
-          <li>woman&apos;s fasion</li>
-          <li>men&apos;s fasion</li>
-          <li>electronics</li>
-          <li>home & lifestyle </li>
-          <li>medicine </li>
-          <li>sports & outdour</li>
-          <li>baby&apos;s & toys</li>
-          <li>Groceries & pets</li>
-          <li>health & beauty</li>
+          <li>
+            <Link to="/products"> woman&apos;s fasion</Link>
+          </li>
+          <li>
+            {" "}
+            <Link to="/products"> men&apos;s fasion</Link>{" "}
+          </li>
+          <li>
+            {" "}
+            <Link to="/products"> electronics</Link>
+          </li>
+          <li>
+            {" "}
+            <Link to="/products"> home & lifestyle</Link>{" "}
+          </li>
+          <li>
+            {" "}
+            <Link to="/products"> medicine</Link>{" "}
+          </li>
+          <li>
+            {" "}
+            <Link to="/products"> sports & outdour</Link>
+          </li>
+          <li>
+            {" "}
+            <Link to="/products"> baby&apos;s & toys</Link>{" "}
+          </li>
+          <li>
+            {" "}
+            <Link to="/products"> Groceries & pets</Link>{" "}
+          </li>
+          <li>
+            {" "}
+            <Link to="/products"> health & beauty</Link>
+          </li>
         </ul>
         <Carousel images={images} />
       </section>
@@ -151,18 +177,19 @@ function Home() {
           <h3 className="text-2xl font-semibold capitalize">
             Browse By Category
           </h3>
-          <div className="flex items-center gap-4">
+          {/* <div className="flex items-center gap-4">
             <button className="w-8 h-8 p-2 text-center  rounded-full bg-Secondary">
               <FaLongArrowAltLeft className="m-auto " />
             </button>
             <button className="w-8 h-8 p-2 text-center  rounded-full bg-Secondary">
               <FaLongArrowAltRight className="m-auto " />
             </button>
-          </div>
+          </div> */}
         </div>
         <div className="flex items-start gap-y-4 flex-wrap justify-between mt-6 ">
           {categories.map((category, index) => (
-            <div
+            <Link
+              to="/products"
               key={index}
               className="border py-8 w-44 cursor-pointer rounded-md  group hover:bg-Secondary2 hover:border-none transition-colors "
             >
@@ -170,13 +197,13 @@ function Home() {
               <h3 className="text-xl text-center font-semibold mt-4 group-hover:text-white transition-colors  capitalize ">
                 {category.title}
               </h3>
-            </div>
+            </Link>
           ))}
         </div>
       </section>
       <section role="products" ref={sectionRef} className="py-10 border-y">
         <Heading title="our Products" />
-        <div className="flex justify-between items-center mt-5 mb-10">
+        {/* <div className="flex justify-between items-center mt-5 mb-10">
           <h3 className="text-2xl font-semibold capitalize">
             Explore Our Products
           </h3>
@@ -188,7 +215,7 @@ function Home() {
               <FaLongArrowAltRight className="m-auto " />
             </button>
           </div>
-        </div>
+        </div> */}
         <ProductsContainer>
           {products.slice(0, 8).map((product) => (
             <ProductItem key={product.id} product={product} />
