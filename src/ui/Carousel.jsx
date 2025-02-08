@@ -16,11 +16,12 @@ const Carousel = memo(function Carousel({ images }) {
   }, []);
   return (
     <div
-      role="carousel"
+      role="region"
+      aria-label="Image carousel"
       className="bg-slate-400 max-md:w-full w-[80%] shadow-md  h-[20rem] relative overflow-hidden"
     >
       <div className="absolute capitalize flex justify-center flex-col z-50 top-0 left-3 lg:left-0  text-white font-bold h-full w-[50%] lg:w-[30%] gap-4 text-center  text-3xl">
-        <h3>Up to 10% off Voucher</h3>
+        <p>Up to 10% off Voucher</p>
         <Link
           to="/products"
           className="text-white capitalize underline-offset-[10px] underline"
@@ -32,7 +33,8 @@ const Carousel = memo(function Carousel({ images }) {
       {images.map((image, indx) => (
         <div
           key={indx}
-          role="carousel-item"
+          role="region"
+          aria-label="Image carousel item"
           style={{
             left: `${-indx * 100}%`,
             transform: `translateX(${currentImage * 100}%)`,
@@ -51,6 +53,7 @@ const Carousel = memo(function Carousel({ images }) {
       <div className="absolute bottom-[5px] z-50 left-1/2 translate-x-[-50%]  flex items-center gap-2 ">
         {images.map((image, indx) => (
           <button
+            aria-label={`Image ${indx + 1}`}
             onClick={() => setCurrentImage(indx)}
             key={indx}
             className={` ${

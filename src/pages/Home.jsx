@@ -213,7 +213,12 @@ function Home() {
           ))}
         </div>
       </section>
-      <section role="products" ref={sectionRef} className="py-10 border-y">
+      <section
+        role="region"
+        aria-label="Products section"
+        ref={sectionRef}
+        className="py-10 border-y"
+      >
         <Heading title="our Products" />
         {/* <div className="flex justify-between items-center mt-5 mb-10">
           <h3 className="text-2xl font-semibold capitalize">

@@ -51,7 +51,11 @@ function SearchProduct({ isMenuOpen, setIsMenuOpen }) {
         placeholder="what are you looking for ?"
         className="  min-w-full  w-full bg-Secondary  px-4 placeholder:text-sm  pr-2  py-2 "
       />
-      <button type="button" className=" items-center relative left-[-25px] ">
+      <button
+        aria-label="search-btn"
+        type="button"
+        className=" items-center relative left-[-25px] "
+      >
         {" "}
         <HiOutlineSearch />
       </button>

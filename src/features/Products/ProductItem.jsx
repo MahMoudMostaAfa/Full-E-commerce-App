@@ -77,6 +77,7 @@ function ProductItem({ product }) {
         {!outOfStock &&
           (isInWishList ? (
             <button
+              aria-label="remove from wishlist"
               onClick={() => disPatch(removeFromWishList(id))}
               className=" text-center absolute top-1 right-1 rounded-full p-[3px] bg-slate-100"
             >
@@ -84,6 +85,7 @@ function ProductItem({ product }) {
             </button>
           ) : (
             <button
+              aria-label="add to wishlist"
               onClick={handleAddToWishList}
               className=" group text-center  absolute top-1 right-1 rounded-full p-[3px] bg-slate-100 hover:bg-Secondary2  "
             >

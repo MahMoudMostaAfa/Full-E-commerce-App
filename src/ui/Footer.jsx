@@ -86,19 +86,19 @@ function Footer() {
         </div>
         <ul className="flex justify-end max-sm:gap-4 md:justify-between items-center">
           <li>
-            <img src="Icon-Facebook.svg" />
+            <img alt="facebook" src="Icon-Facebook.svg" />
           </li>
 
           <li>
-            <img src="Icon-Linkedin.svg" />
+            <img alt="linkdin" src="Icon-Linkedin.svg" />
           </li>
 
           <li>
-            <img src="Icon-Twitter.svg" />
+            <img alt="twitter" src="Icon-Twitter.svg" />
           </li>
 
           <li>
-            <img src="icon-instagram.svg" />
+            <img alt="instagram" src="icon-instagram.svg" />
           </li>
         </ul>
       </div>

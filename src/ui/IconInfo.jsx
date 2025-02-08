@@ -17,6 +17,7 @@ function IconInfo({ setIsMenuOpen, isMenuOpen }) {
     <div className="flex space-x-4 items-center ">
       <Tooltip label="wishlist" placement="bottom">
         <Link
+          aria-label="wishlist"
           to={"/wishlist"}
           className="relative hover:text-Secondary2 transition-colors duration-300"
         >
@@ -31,6 +32,7 @@ function IconInfo({ setIsMenuOpen, isMenuOpen }) {
       <Tooltip label="cart" placement="bottom">
         <Link
           to={"/cart"}
+          aria-label="cart"
           className="relative  hover:text-Secondary2 transition-colors duration-300"
         >
           <HiOutlineShoppingCart className="text-2xl" />
@@ -44,6 +46,7 @@ function IconInfo({ setIsMenuOpen, isMenuOpen }) {
       {isAuthenticated && (
         <Tooltip label="profile" placement="bottom">
           <Link
+            aria-label="profile"
             to={"/account"}
             className=" hover:text-Secondary2 transition-colors duration-300"
           >
@@ -53,6 +56,7 @@ function IconInfo({ setIsMenuOpen, isMenuOpen }) {
       )}
       <div className="md:hidden w-8">
         <button
+          aria-label="menu"
           onClick={(e) => {
             e.stopPropagation();
             // console.log("clicked");
