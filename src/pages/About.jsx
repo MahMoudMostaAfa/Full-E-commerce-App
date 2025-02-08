@@ -1,8 +1,8 @@
 import { IoBagHandleOutline, IoStorefrontOutline } from "react-icons/io5";
 import { LuInstagram, LuLinkedin, LuTwitter } from "react-icons/lu";
-import { RiCustomerServiceLine, RiMoneyDollarCircleLine } from "react-icons/ri";
-import { TbMoneybag, TbTruckDelivery } from "react-icons/tb";
-import { VscWorkspaceTrusted } from "react-icons/vsc";
+import { RiMoneyDollarCircleLine } from "react-icons/ri";
+import { TbMoneybag } from "react-icons/tb";
+
 import Benefits from "../ui/Benefits";
 
 function About() {
