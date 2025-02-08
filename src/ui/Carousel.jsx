@@ -44,6 +44,7 @@ const Carousel = memo(function Carousel({ images }) {
        max-h-full bg-slate-500 overflow-hidden  grayscale-[80%] `}
         >
           <img
+            loading="lazy"
             src={image.src}
             alt={image.alt}
             className="object-cover h-full w-full"

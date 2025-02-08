@@ -14,7 +14,10 @@ function Footer() {
             type="email"
             placeholder="Enter your email"
           />
-          <button className="absolute top-[50%] translate-y-[-50%] right-12   ">
+          <button
+            aria-label="btn-send"
+            className="absolute top-[50%] translate-y-[-50%] right-12   "
+          >
             <VscSend />
           </button>
         </div>
